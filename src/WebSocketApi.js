@@ -2,18 +2,24 @@ import router from './router'
 
 export default class WebSocketApi {
   constructor () {
-    this.websocket = new WebSocket('ws://127.0.0.1:8000/wsapi/')
-    this.websocket.onmessage = this.localListener
+    this.connect()
   }
 
   localListener (ev) {
     const data = JSON.parse(ev.data)
-    if (data.event === 'auth') {
+    if (data.event === 'authentication.auth') {
       router.push('/login')
     }
     if (window.ws.listener !== undefined) {
       window.ws.listener(data)
     }
+  }
+
+  connect () {
+    console.log('Disconnected(( Fixing...')
+    this.websocket = new WebSocket('ws://127.0.0.1:8000/wsapi/')
+    this.websocket.onclose = this.connect
+    this.websocket.onmessage = this.localListener
   }
 
   setListener (listener) {

@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import router from '../router'
+
 export default {
   name: 'Login',
   data () {
@@ -39,6 +41,9 @@ export default {
       if (data.event === 'authentication.error') {
         this.sending = false
         this.error = true
+      } else if (data.event === 'authentication.token') {
+        localStorage.setItem('token', data.token)
+        router.back()
       }
     }
   },
