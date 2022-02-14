@@ -8,7 +8,7 @@ export default class WebSocketApi {
   localListener (ev) {
     const data = JSON.parse(ev.data)
     if (data.event === 'authentication.auth') {
-      router.push('/login')
+      router.push('/login').then(() => {}).catch(() => {})
     }
     if (window.ws.listener !== undefined) {
       window.ws.listener(data)
