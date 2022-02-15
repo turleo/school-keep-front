@@ -1,9 +1,11 @@
 <template>
   <router-link :to="to">
-    <md-list-item>
-      <md-icon><svg-icon type="mdi" :path="icon"></svg-icon></md-icon>
-      <span class="md-list-item-text">{{ title }}</span>
-    </md-list-item>
+    <md-ripple>
+      <md-list-item>
+        <md-icon><svg-icon type="mdi" :path="icon"></svg-icon></md-icon>
+        <span class="md-list-item-text">{{ title }}</span>
+      </md-list-item>
+    </md-ripple>
   </router-link>
 </template>
 
