@@ -5,39 +5,27 @@
     </md-toolbar>
 
     <div v-if="loggedIn">
-      <router-link to="/">
-        <md-list-item>
-          <md-icon><svg-icon type="mdi" :path="mdiHome"></svg-icon></md-icon>
-          <span class="md-list-item-text">Home</span>
-        </md-list-item>
-      </router-link>
+      <Item to="/" :icon="mdiHome" title="Home"></Item>
 
-      <router-link to="/about">
-        <md-list-item>
-          <md-icon><svg-icon type="mdi" :path="mdiInformation"></svg-icon></md-icon>
-          <span class="md-list-item-text">About</span>
-        </md-list-item>
-      </router-link>
+      <Item to="/settings" :icon="mdiCog" title="Settings"></Item>
+
+      <Item to="/about" :icon="mdiInformation" title="About"></Item>
+
     </div>
     <div v-else>
-      <router-link to="/login">
-        <md-list-item>
-          <md-icon><svg-icon type="mdi" :path="mdiLoginVariant"></svg-icon></md-icon>
-          <span class="md-list-item-text">Login</span>
-        </md-list-item>
-      </router-link>
+      <Item to="/login" :icon="mdiLoginVariant" title="Login"></Item>
     </div>
   </md-list>
 </template>
 
 <script>
-import SvgIcon from '@jamescoyle/vue-icon'
-import { mdiLoginVariant, mdiHome, mdiInformation } from '@mdi/js'
+import { mdiLoginVariant, mdiHome, mdiInformation, mdiCog } from '@mdi/js'
+import Item from './Item'
 
 export default {
   name: 'Menu',
   components: {
-    SvgIcon
+    Item
   },
   data () {
     return {
@@ -45,7 +33,8 @@ export default {
 
       mdiLoginVariant: mdiLoginVariant,
       mdiHome: mdiHome,
-      mdiInformation: mdiInformation
+      mdiInformation: mdiInformation,
+      mdiCog: mdiCog
     }
   }
 }
