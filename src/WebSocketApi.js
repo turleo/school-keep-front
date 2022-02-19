@@ -3,6 +3,8 @@ import router from './router'
 export default class WebSocketApi {
   constructor () {
     this.connect()
+    this.ready = false
+    this.queue = []
 
     setInterval(this.reconnect, 1000)
   }
@@ -16,6 +18,8 @@ export default class WebSocketApi {
       } else {
         window.ws.send({ event: 'authentication.token', token: token })
       }
+      window.ws.ready = true
+      window.ws.send()
     } else if (data.event === 'authentication.error') {
       localStorage.removeItem('token')
       router.push('/login').then(() => {}).catch(() => {})
@@ -43,7 +47,17 @@ export default class WebSocketApi {
   }
 
   send (data) {
-    console.log(JSON.stringify(data))
-    this.websocket.send(JSON.stringify(data))
+    if (data !== undefined) {
+      if (data.event.startsWith('authentication.')) {
+        this.websocket.send(JSON.stringify(data))
+      } else {
+        this.queue.push(data)
+      }
+    }
+    if (this.ready) {
+      this.queue.forEach(e => {
+        this.websocket.send(JSON.stringify(e))
+      })
+    }
   }
 }
