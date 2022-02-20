@@ -24,7 +24,7 @@ export default class WebSocketApi {
       localStorage.removeItem('token')
       router.push('/login').then(() => {}).catch(() => {})
     }
-    if (window.ws.listener !== undefined) {
+    if (window.ws.listener !== undefined && window.ws.ready) {
       window.ws.listener(data)
     }
   }

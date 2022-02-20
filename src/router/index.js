@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login'
 import Settings from '../Settings'
+import Bells from '../settings/Bells/Bells'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/settings',
     name: 'Settings',
     component: Settings
+  },
+  {
+    path: '/settings/lessons',
+    name: 'Settings',
+    component: Bells
   }
 ]
 
