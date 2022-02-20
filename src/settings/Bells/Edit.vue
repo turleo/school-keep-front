@@ -29,6 +29,7 @@
     </div>
 
     <md-dialog-actions>
+      <md-button class="md-accent" @click="deleteBell">Delete</md-button>
       <md-button class="md-primary" @click="toggle">Close</md-button>
       <md-button class="md-primary" @click="save">Save</md-button>
     </md-dialog-actions>
@@ -57,6 +58,9 @@ export default {
 
       window.ws.send({ event: 'timetable.lessons.change', data: data })
       this.toggle()
+    },
+    deleteBell () {
+      window.ws.send({ event: 'timetable.lessons.delete', id: this.bell.id })
     }
   },
   props: ['bell']

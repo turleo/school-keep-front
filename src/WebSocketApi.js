@@ -58,6 +58,7 @@ export default class WebSocketApi {
       this.queue.forEach(e => {
         this.websocket.send(JSON.stringify(e))
       })
+      this.queue = []
     }
   }
 }
