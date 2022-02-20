@@ -6,17 +6,17 @@
 
       <md-field>
         <label for="start">Start time</label>
-        <md-input v-model="start" id="start" type="time"></md-input>
+        <md-input v-model="bell.start" id="start" type="time"></md-input>
       </md-field>
 
       <md-field>
         <label for="end">End time</label>
-        <md-input v-model="end" id="end" type="time"></md-input>
+        <md-input v-model="bell.end" id="end" type="time"></md-input>
       </md-field>
 
       <md-field>
         <label for="days">Days</label>
-        <md-select v-model="days" name="days" id="days" md-dense multiple>
+        <md-select v-model="bell.days" name="days" id="days" md-dense multiple>
           <md-option value="mo">Monday</md-option>
           <md-option value="tu">Tuesday</md-option>
           <md-option value="we">Wednesday</md-option>
@@ -29,8 +29,8 @@
     </div>
 
     <md-dialog-actions>
-      <md-button class="md-primary" @click="opened = false">Close</md-button>
-      <md-button class="md-primary">Save</md-button>
+      <md-button class="md-primary" @click="toggle">Close</md-button>
+      <md-button class="md-primary" @click="save">Save</md-button>
     </md-dialog-actions>
   </md-dialog>
 </template>
@@ -40,12 +40,26 @@ export default {
   name: 'Edit',
   data () {
     return {
-      opened: true,
-      start: '',
-      end: '',
-      days: []
+      opened: false
     }
-  }
+  },
+  methods: {
+    toggle () {
+      this.opened = !this.opened
+    },
+    save () {
+      const data = {
+        id: this.bell.id,
+        start: this.bell.start,
+        end: this.bell.end,
+        days: this.bell.days
+      }
+
+      window.ws.send({ event: 'timetable.lessons.change', data: data })
+      this.toggle()
+    }
+  },
+  props: ['bell']
 }
 </script>
 
