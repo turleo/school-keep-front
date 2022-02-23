@@ -1,6 +1,7 @@
 <template>
   <md-list>
     <Item to="settings/lessons" :icon="mdiBell" title="Bell times"></Item>
+    <Item to="settings/subjects" :icon="mdiChairSchool" title="Subjects"></Item>
 
     <md-divider></md-divider>
 
@@ -10,7 +11,7 @@
 
 <script>
 import Item from './components/Drawer/Item'
-import { mdiBell, mdiDevices } from '@mdi/js'
+import { mdiBell, mdiChairSchool, mdiDevices } from '@mdi/js'
 
 export default {
   name: 'Settings',
@@ -18,6 +19,7 @@ export default {
   data () {
     return {
       mdiBell: mdiBell,
+      mdiChairSchool: mdiChairSchool,
       mdiDevices: mdiDevices
     }
   }

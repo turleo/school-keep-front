@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login'
 import Settings from '../Settings'
 import Bells from '../settings/Bells/Bells'
+import Subjects from '../settings/Subjects/Subjects'
 
 Vue.use(VueRouter)
 
@@ -34,8 +35,13 @@ const routes = [
   },
   {
     path: '/settings/lessons',
-    name: 'Settings',
+    name: 'Bells',
     component: Bells
+  },
+  {
+    path: '/settings/subjects',
+    name: 'Subjects',
+    component: Subjects
   }
 ]
 

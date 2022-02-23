@@ -113,11 +113,8 @@ export default {
         this.bells.sa.length,
         this.bells.su.length
       )
-
-      console.log(this.bells.mo[0])
     },
     setEdit (bell) {
-      console.log('ehe')
       this.edit_bell = bell
       this.$refs.editModal.toggle()
     }
