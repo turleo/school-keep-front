@@ -8,10 +8,15 @@
         <label for="title">It is...</label>
         <md-input v-model="subject.title" id="title" required></md-input>
       </md-field>
-      <md-field>
-        <label for="icon">It's icon...</label>
-        <md-input v-model="subject.icon" id="icon"></md-input>
-      </md-field>
+      <div>
+        <p>It's icon...</p>
+        <md-button id="icon" class="md-dense md-primary"
+                   style="height: 100px; font-size: 90px"
+                   @click="showEmoji = !showEmoji">{{ subject.icon }}</md-button>
+        <br>
+        <VEmojiPicker @select="selectEmoji" v-show="showEmoji"
+                      :style="{ width: '340px', height: '440px'}"/>
+      </div>
       <md-field>
         <label for="room">It is located in room...</label>
         <md-input v-model="subject.room" id="room"></md-input>
@@ -31,12 +36,18 @@
 </template>
 
 <script>
+import { VEmojiPicker } from 'v-emoji-picker'
+
 export default {
   name: 'Edit',
   data () {
     return {
-      opened: false
+      opened: false,
+      showEmoji: false
     }
+  },
+  components: {
+    VEmojiPicker
   },
   methods: {
     toggle () {
@@ -57,6 +68,11 @@ export default {
     },
     deleteSubject () {
       window.ws.send({ event: 'timetable.subjects.delete', id: this.subject.id })
+    },
+
+    selectEmoji (emoji) {
+      this.subject.icon = emoji.data
+      this.showEmoji = false
     }
   },
   props: ['subject']
