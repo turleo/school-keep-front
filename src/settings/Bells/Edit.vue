@@ -56,11 +56,11 @@ export default {
         days: this.bell.days
       }
 
-      window.ws.send({ event: 'timetable.lessons.change', data: data })
+      window.ws.send({ event: 'timetable.bells.change', data: data })
       this.toggle()
     },
     deleteBell () {
-      window.ws.send({ event: 'timetable.lessons.delete', id: this.bell.id })
+      window.ws.send({ event: 'timetable.bells.delete', id: this.bell.id })
     }
   },
   props: ['bell']

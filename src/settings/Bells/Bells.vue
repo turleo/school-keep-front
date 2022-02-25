@@ -121,7 +121,7 @@ export default {
   },
   async mounted () {
     window.ws.setListener(this.getBells)
-    window.ws.send({ event: 'timetable.lessons.fetch' })
+    window.ws.send({ event: 'timetable.bells.fetch' })
   }
 }
 </script>
