@@ -5,6 +5,7 @@ import Login from '../views/Login'
 import Settings from '../Settings'
 import Bells from '../settings/Bells/Bells'
 import Subjects from '../settings/Subjects/Subjects'
+import Timetable from '../settings/Timetable/Timetable'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,11 @@ const routes = [
     path: '/settings/subjects',
     name: 'Subjects',
     component: Subjects
+  },
+  {
+    path: '/settings/timetable',
+    name: 'Timetable',
+    component: Timetable
   }
 ]
 

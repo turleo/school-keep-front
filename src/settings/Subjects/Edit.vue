@@ -54,20 +54,12 @@ export default {
       this.opened = !this.opened
     },
     save () {
-      const data = {
-        id: this.subject.id,
-        title: this.subject.title,
-        icon: this.subject.icon,
-        room: this.subject.room,
-        teacher: this.subject.teacher
-      }
-      console.log(data)
-
-      window.ws.send({ event: 'timetable.subjects.change', data: data })
+      window.ws.subjectClass.change(this.subject)
       this.toggle()
     },
     deleteSubject () {
-      window.ws.send({ event: 'timetable.subjects.delete', id: this.subject.id })
+      window.ws.subjectClass.delete(this.subject)
+      this.toggle()
     },
 
     selectEmoji (emoji) {

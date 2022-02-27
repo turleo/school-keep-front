@@ -49,18 +49,12 @@ export default {
       this.opened = !this.opened
     },
     save () {
-      const data = {
-        id: this.bell.id,
-        start: this.bell.start,
-        end: this.bell.end,
-        days: this.bell.days
-      }
-
-      window.ws.send({ event: 'timetable.bells.change', data: data })
+      window.ws.bellClass.change(this.bell)
       this.toggle()
     },
     deleteBell () {
-      window.ws.send({ event: 'timetable.bells.delete', id: this.bell.id })
+      window.ws.bellClass.delete(this.bell)
+      this.toggle()
     }
   },
   props: ['bell']

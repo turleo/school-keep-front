@@ -33,7 +33,6 @@ export default {
   },
   components: {
     Menu,
-
     SvgIcon
   }
 }

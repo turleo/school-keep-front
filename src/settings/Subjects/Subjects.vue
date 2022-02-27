@@ -41,7 +41,6 @@ export default {
   },
   data () {
     return {
-      subjects: [],
       edit_subject: {
         id: 0,
         title: '',
@@ -53,18 +52,16 @@ export default {
       add: mdiPlus
     }
   },
+  computed: {
+    subjects: () => {
+      return window.ws.subjectClass.data.subjects
+    }
+  },
   methods: {
-    getSubjects (e) {
-      this.subjects = e
-    },
     setEdit (subject) {
       this.edit_subject = subject
       this.$refs.editModal.toggle()
     }
-  },
-  async mounted () {
-    window.ws.setListener(this.getSubjects)
-    window.ws.send({ event: 'timetable.subjects.fetch' })
   }
 }
 </script>
