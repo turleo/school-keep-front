@@ -1,6 +1,7 @@
 import router from './router'
 import Bells from './data/bells'
 import Subjects from './data/subjects'
+import Lessons from './data/lessons'
 
 export default class WebSocketApi {
   constructor () {
@@ -20,6 +21,9 @@ export default class WebSocketApi {
 
     this.subjectClass = new Subjects()
     this.send({ event: this.subjectClass.ask })
+
+    this.lessonsClass = new Lessons()
+    this.send({ event: this.lessonsClass.ask })
   }
 
   localListener (ev) {
@@ -45,6 +49,9 @@ export default class WebSocketApi {
         break
       case 'timetable.subjects':
         window.ws.subjectClass.listener(data)
+        break
+      case 'timetable.lessons':
+        window.ws.lessonsClass.listener(data)
         break
     }
     if (window.ws.listeners[data.event] !== undefined && window.ws.ready) {
