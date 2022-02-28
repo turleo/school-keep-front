@@ -21,6 +21,15 @@ export default class Bells {
   }
 
   bellsListener (e) {
+    function compare (a, b) {
+      if (a.start > b.start) {
+        return 1
+      } else if (a.start < b.start) {
+        return -1
+      } else {
+        return 0
+      }
+    }
     this.data.bells = {
       mo: [],
       tu: [],
@@ -36,31 +45,31 @@ export default class Bells {
       if (e.days.includes('mo')) {
         this.data.bells.mo.push(e)
       }
-      this.data.bells.mo = this.data.bells.mo.sort()
+      this.data.bells.mo = this.data.bells.mo.sort(compare)
       if (e.days.includes('tu')) {
         this.data.bells.tu.push(e)
       }
-      this.data.bells.tu = this.data.bells.tu.sort()
+      this.data.bells.tu = this.data.bells.tu.sort(compare)
       if (e.days.includes('we')) {
         this.data.bells.we.push(e)
       }
-      this.data.bells.we = this.data.bells.we.sort()
+      this.data.bells.we = this.data.bells.we.sort(compare)
       if (e.days.includes('th')) {
         this.data.bells.th.push(e)
       }
-      this.data.bells.th = this.data.bells.th.sort()
+      this.data.bells.th = this.data.bells.th.sort(compare)
       if (e.days.includes('fr')) {
         this.data.bells.fr.push(e)
       }
-      this.data.bells.fr = this.data.bells.fr.sort()
+      this.data.bells.fr = this.data.bells.fr.sort(compare)
       if (e.days.includes('sa')) {
         this.data.bells.sa.push(e)
       }
-      this.data.bells.sa = this.data.bells.sa.sort()
+      this.data.bells.sa = this.data.bells.sa.sort(compare)
       if (e.days.includes('su')) {
         this.data.bells.su.push(e)
       }
-      this.data.bells.su = this.data.bells.su.sort()
+      this.data.bells.su = this.data.bells.su.sort(compare)
     })
     this.data.max_bells = Math.max(
       this.data.bells.mo.length,
