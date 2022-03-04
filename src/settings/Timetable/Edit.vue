@@ -1,6 +1,6 @@
 <template>
   <md-dialog :md-active.sync="opened">
-    <md-dialog-title>Edit</md-dialog-title>
+    <md-dialog-title>{{ $t("common.edit.edit") }}</md-dialog-title>
     <md-content>
       <p>{{ bell.start }} - {{ bell.end }}</p>
       <md-radio v-for="subject in subjects" v-bind:key="subject.id" :value="subject" v-model="lesson.subject" @click.native="change">{{ subject.icon }} {{ subject.title }}</md-radio>

@@ -1,19 +1,19 @@
 <template>
   <form>
-    <h1 class="md-title">Login</h1>
+    <h1 class="md-title">{{ $t("drawer.login") }}</h1>
     <md-field :class="loginClass">
-      <label for="username">Username</label>
+      <label for="username">{{  $t("login.username") }}</label>
       <md-input name="username" id="username" v-model="username" :disabled="sending" required
                 @keydown="error = false" v-on:keyup.enter="focusNext" autofocus />
-      <span class="md-error" v-if="error">Wrong username</span>
+      <span class="md-error" v-if="error">{{ $t("login.wrongUsername") }}</span>
     </md-field>
     <md-field :class="loginClass">
-      <label for="password">Password</label>
+      <label for="password">{{ $t("login.password") }}</label>
       <md-input name="password" id="password" v-model="password" :disabled="sending" required
           @keydown="error = false" type="password" v-on:keyup.enter="send" />
-      <span class="md-error" v-if="error">Wrong password</span>
+      <span class="md-error" v-if="error">{{ $t("login.wrongPassword") }}</span>
     </md-field>
-    <md-button class="md-primary" :disabled="sending" @click="send" >Login</md-button>
+    <md-button class="md-primary" :disabled="sending" @click="send" >{{ $t("drawer.login") }}</md-button>
   </form>
 </template>
 

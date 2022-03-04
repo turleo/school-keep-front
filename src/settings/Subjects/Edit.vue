@@ -1,15 +1,15 @@
 <template>
   <md-dialog :md-active.sync="opened">
-    <md-dialog-title>Edit subject</md-dialog-title>
+    <md-dialog-title>{{ $t("common.edit.edit") }}</md-dialog-title>
 
     <div id="inputs">
 
       <md-field>
-        <label for="title">It is...</label>
+        <label for="title">{{ $t("settings.subjects.edit.name") }}</label>
         <md-input v-model="subject.title" id="title" required></md-input>
       </md-field>
       <div>
-        <p>It's icon...</p>
+        <p>{{ $t("settings.subjects.edit.icon") }}</p>
         <md-button id="icon" class="md-dense md-primary"
                    style="height: 100px; font-size: 90px"
                    @click="showEmoji = !showEmoji">{{ subject.icon }}</md-button>
@@ -18,19 +18,19 @@
                       :style="{ width: '340px', height: '440px'}"/>
       </div>
       <md-field>
-        <label for="room">It is located in room...</label>
+        <label for="room">{{ $t("settings.subjects.edit.room") }}</label>
         <md-input v-model="subject.room" id="room"></md-input>
       </md-field>
       <md-field>
-        <label for="teacher">Teacher</label>
+        <label for="teacher">{{ $t("settings.subjects.edit.teacher") }}</label>
         <md-input v-model="subject.teacher" id="teacher"></md-input>
       </md-field>
     </div>
 
     <md-dialog-actions>
-      <md-button class="md-accent" @click="deleteSubject">Delete</md-button>
-      <md-button class="md-primary" @click="toggle">Close</md-button>
-      <md-button class="md-primary" @click="save">Save</md-button>
+      <md-button class="md-accent" @click="deleteSubject">{{  $t("common.edit.delete") }}</md-button>
+      <md-button class="md-primary" @click="toggle">{{  $t("common.edit.cancel") }}</md-button>
+      <md-button class="md-primary" @click="save">{{  $t("common.edit.save") }}</md-button>
     </md-dialog-actions>
   </md-dialog>
 </template>

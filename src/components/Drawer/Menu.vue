@@ -1,21 +1,21 @@
 <template>
   <md-list>
     <md-toolbar class="md-transparent" md-elevation="0">
-      <span class="md-title">School Sync</span>
+      <span class="md-title">{{ $t("title") }}</span>
     </md-toolbar>
 
     <div v-if="loggedIn">
-      <Item to="/" :icon="mdiHome" title="Home"></Item>
+      <Item to="/" :icon="mdiHome" title="drawer.home"></Item>
 
-      <Item to="/countdown" :icon="mdiCameraTimer" title="Countdown"></Item>
+      <Item to="/countdown" :icon="mdiCameraTimer" title="drawer.countdown"></Item>
 
-      <Item to="/settings" :icon="mdiCog" title="Settings"></Item>
+      <Item to="/settings" :icon="mdiCog" title="drawer.settings"></Item>
 
-      <Item to="/about" :icon="mdiInformation" title="About"></Item>
+      <Item to="/about" :icon="mdiInformation" title="drawer.about"></Item>
 
     </div>
     <div v-else>
-      <Item to="/login" :icon="mdiLoginVariant" title="Login"></Item>
+      <Item to="/login" :icon="mdiLoginVariant" title="drawer.login"></Item>
     </div>
   </md-list>
 </template>

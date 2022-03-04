@@ -2,13 +2,13 @@
   <div>
     <md-table>
       <md-table-row>
-        <md-table-head>Monday</md-table-head>
-        <md-table-head>Tuesday</md-table-head>
-        <md-table-head>Wednesday</md-table-head>
-        <md-table-head>Thursday</md-table-head>
-        <md-table-head>Friday</md-table-head>
-        <md-table-head>Saturday</md-table-head>
-        <md-table-head>Sunday</md-table-head>
+        <md-table-head>{{ $t("common.days.monday") }}</md-table-head>
+        <md-table-head>{{ $t("common.days.tuesday") }}</md-table-head>
+        <md-table-head>{{ $t("common.days.wednesday") }}</md-table-head>
+        <md-table-head>{{ $t("common.days.thursday") }}</md-table-head>
+        <md-table-head>{{ $t("common.days.friday") }}</md-table-head>
+        <md-table-head>{{ $t("common.days.saturday") }}</md-table-head>
+        <md-table-head>{{ $t("common.days.sunday") }}</md-table-head>
       </md-table-row>
 
       <md-table-row v-for="(n, i) in max_bells" v-bind:key="i">

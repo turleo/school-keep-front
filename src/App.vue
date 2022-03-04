@@ -4,7 +4,7 @@
       <md-button class="md-icon-button" @click="showNavigation = !showNavigation">
         <svg-icon type="mdi" :path="mdiMenu"></svg-icon>
       </md-button>
-      <h3 class="md-title">Primary</h3>
+      <h3 class="md-title">{{ $t(currentRouteName) }}</h3>
     </md-app-toolbar>
 
     <md-app-drawer :md-active.sync="showNavigation" md-swipeable md-persistent="mini" id="navbar">
@@ -34,6 +34,11 @@ export default {
   components: {
     Menu,
     SvgIcon
+  },
+  computed: {
+    currentRouteName () {
+      return this.$route.name
+    }
   }
 }
 </script>
@@ -41,5 +46,8 @@ export default {
 <style lang="scss" scoped>
 .md-app {
   min-height: 100vh;
+}
+.md-app-drawer {
+  max-width: 250px;
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
   <md-list>
-    <Item to="settings/timetable" :icon="mdiTimetable" title="Timetable"></Item>
-    <Item to="settings/lessons" :icon="mdiBell" title="Bell times"></Item>
-    <Item to="settings/subjects" :icon="mdiChairSchool" title="Subjects"></Item>
+    <Item to="settings/timetable" :icon="mdiTimetable" title="settings.main.timetable"></Item>
+    <Item to="settings/lessons" :icon="mdiBell" title="settings.main.bells"></Item>
+    <Item to="settings/subjects" :icon="mdiChairSchool" title="settings.main.subjects"></Item>
 
     <md-divider></md-divider>
 
-    <Item to="settings/devices" :icon="mdiDevices" title="Authorised devices"></Item>
+    <Item to="settings/devices" :icon="mdiDevices" title="settings.main.devices"></Item>
   </md-list>
 </template>
 

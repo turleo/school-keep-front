@@ -2,10 +2,10 @@
   <div>
     <md-table>
       <md-table-row>
-        <md-table-head style="width: 100px">Icon</md-table-head>
-        <md-table-head>Subject</md-table-head>
-        <md-table-head>Room</md-table-head>
-        <md-table-head>Teacher</md-table-head>
+        <md-table-head style="width: 100px">{{ $t("settings.subjects.icon") }}</md-table-head>
+        <md-table-head>{{ $t("settings.subjects.subject") }}</md-table-head>
+        <md-table-head>{{ $t("settings.subjects.room") }}</md-table-head>
+        <md-table-head>{{ $t("settings.subjects.teacher") }}</md-table-head>
       </md-table-row>
 
       <md-table-row v-for="subject in subjects" v-bind:key="subject.id" @click="setEdit(subject)">
