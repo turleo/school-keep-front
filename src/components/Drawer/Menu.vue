@@ -7,6 +7,8 @@
     <div v-if="loggedIn">
       <Item to="/" :icon="mdiHome" title="Home"></Item>
 
+      <Item to="/countdown" :icon="mdiCameraTimer" title="Countdown"></Item>
+
       <Item to="/settings" :icon="mdiCog" title="Settings"></Item>
 
       <Item to="/about" :icon="mdiInformation" title="About"></Item>
@@ -19,7 +21,7 @@
 </template>
 
 <script>
-import { mdiLoginVariant, mdiHome, mdiInformation, mdiCog } from '@mdi/js'
+import { mdiLoginVariant, mdiHome, mdiInformation, mdiCog, mdiCameraTimer } from '@mdi/js'
 import Item from './Item'
 
 export default {
@@ -34,7 +36,8 @@ export default {
       mdiLoginVariant: mdiLoginVariant,
       mdiHome: mdiHome,
       mdiInformation: mdiInformation,
-      mdiCog: mdiCog
+      mdiCog: mdiCog,
+      mdiCameraTimer: mdiCameraTimer
     }
   }
 }

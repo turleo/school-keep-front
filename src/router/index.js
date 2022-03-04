@@ -6,6 +6,7 @@ import Settings from '../Settings'
 import Bells from '../settings/Bells/Bells'
 import Subjects from '../settings/Subjects/Subjects'
 import Timetable from '../settings/Timetable/Timetable'
+import Countdown from '../views/Countdown'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,12 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+
+  {
+    path: '/countdown',
+    name: 'Countdown',
+    component: Countdown
   },
 
   {
