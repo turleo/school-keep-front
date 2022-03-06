@@ -33,11 +33,14 @@ export default {
     hometasks () {
       return window.ws.hometaskClass.data.tasks[this.date.toLocaleDateString()]
     },
+    hometasksByServerId () {
+      return window.ws.hometaskClass.data.tasks_by_server_id
+    },
     openedHometask () {
       if (this.hometasks === undefined) {
         return { subject: { id: 0 } }
       }
-      return this.hometasks[this.openedHometaskId]
+      return this.hometasksByServerId[this.openedHometaskId]
     }
   },
   methods: {

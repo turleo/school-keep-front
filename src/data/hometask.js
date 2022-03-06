@@ -5,13 +5,15 @@ export default class Hometask {
     this.ask = 'hometask.fetch'
     this.data = new Vue({
       data: {
-        tasks: {}
+        tasks: {},
+        tasks_by_server_id: {}
       }
     })
   }
 
   listener (e) {
     this.data.tasks = {}
+    this.data.tasks_by_server_id = {}
     e.data.forEach(hometask => {
       let deadline = hometask.deadline
       deadline = new Date(deadline).toLocaleDateString()
@@ -19,6 +21,7 @@ export default class Hometask {
         this.data.tasks[deadline] = []
       }
       this.data.tasks[deadline].push(hometask)
+      this.data.tasks_by_server_id[hometask.id] = hometask
     })
   }
 
