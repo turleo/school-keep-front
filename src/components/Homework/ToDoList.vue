@@ -2,10 +2,10 @@
   <md-list>
     <md-list-item v-for="task in tasks" v-bind:key="task.id" @click="changeTask(task)">
       <div>
-        <md-checkbox v-model="task.done"></md-checkbox>
+        <md-checkbox v-model="task.done" @change="changeTask(task)"></md-checkbox>
       </div>
       <md-field>
-        <md-input v-model="task.text" @focusout="changeTask"></md-input>
+        <md-input v-model="task.text" @focusout="changeTask(task)"></md-input>
       </md-field>
     </md-list-item>
   </md-list>
