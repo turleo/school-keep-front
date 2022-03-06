@@ -1,4 +1,5 @@
 import { settings } from './settings/en'
+import { hometask } from './hometask/en'
 
 const enMessages = {
   title: 'School',
@@ -21,9 +22,12 @@ const enMessages = {
     }
   },
 
+  hometask: hometask,
+
   drawer: {
     home: 'Home',
     countdown: 'Countdown',
+    homework: 'Hometask',
     settings: 'Settings',
     about: 'About',
 

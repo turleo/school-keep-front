@@ -8,6 +8,7 @@
       <Item to="/" :icon="mdiHome" title="drawer.home"></Item>
 
       <Item to="/countdown" :icon="mdiCameraTimer" title="drawer.countdown"></Item>
+      <Item to="/homework/0" :icon="mdiHomeEdit " title="drawer.homework"></Item>
 
       <Item to="/settings" :icon="mdiCog" title="drawer.settings"></Item>
 
@@ -21,7 +22,7 @@
 </template>
 
 <script>
-import { mdiLoginVariant, mdiHome, mdiInformation, mdiCog, mdiCameraTimer } from '@mdi/js'
+import { mdiLoginVariant, mdiHome, mdiInformation, mdiCog, mdiCameraTimer, mdiHomeEdit } from '@mdi/js'
 import Item from './Item'
 
 export default {
@@ -37,7 +38,8 @@ export default {
       mdiHome: mdiHome,
       mdiInformation: mdiInformation,
       mdiCog: mdiCog,
-      mdiCameraTimer: mdiCameraTimer
+      mdiCameraTimer: mdiCameraTimer,
+      mdiHomeEdit: mdiHomeEdit
     }
   }
 }

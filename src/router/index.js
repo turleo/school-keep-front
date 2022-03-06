@@ -7,6 +7,7 @@ import Bells from '../settings/Bells/Bells'
 import Subjects from '../settings/Subjects/Subjects'
 import Timetable from '../settings/Timetable/Timetable'
 import Countdown from '../views/Countdown'
+import Homework from '../views/Homework'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,12 @@ const routes = [
     path: '/countdown',
     name: 'drawer.countdown',
     component: Countdown
+  },
+
+  {
+    path: '/homework/:day',
+    name: 'drawer.homework',
+    component: Homework
   },
 
   {

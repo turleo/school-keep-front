@@ -1,4 +1,5 @@
 import { settings } from './settings/ru'
+import { hometask } from './hometask/ru'
 
 const ruMessages = {
   title: 'Школа',
@@ -21,9 +22,12 @@ const ruMessages = {
     }
   },
 
+  hometask: hometask,
+
   drawer: {
     home: 'Главная',
     countdown: 'Время до...',
+    homework: 'Домашнее задание',
     settings: 'Настройки',
     about: 'Что это?',
 

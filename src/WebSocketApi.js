@@ -2,6 +2,7 @@ import router from './router'
 import Bells from './data/bells'
 import Subjects from './data/subjects'
 import Lessons from './data/lessons'
+import Hometask from './data/hometask'
 
 export default class WebSocketApi {
   constructor () {
@@ -24,6 +25,9 @@ export default class WebSocketApi {
 
     this.lessonsClass = new Lessons()
     this.send({ event: this.lessonsClass.ask })
+
+    this.hometaskClass = new Hometask()
+    this.send({ event: this.hometaskClass.ask })
   }
 
   localListener (ev) {
@@ -52,6 +56,9 @@ export default class WebSocketApi {
         break
       case 'timetable.lessons':
         window.ws.lessonsClass.listener(data)
+        break
+      case 'hometask':
+        window.ws.hometaskClass.listener(data)
         break
     }
     if (window.ws.listeners[data.event] !== undefined && window.ws.ready) {

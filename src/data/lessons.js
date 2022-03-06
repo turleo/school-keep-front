@@ -23,7 +23,6 @@ export default class Lessons {
 
   listener (e) {
     this.orig = e.data
-    console.log(this.orig)
     this.orig.forEach(e => {
       this.data.lessons[e.day][e.bell.id] = e
     })
