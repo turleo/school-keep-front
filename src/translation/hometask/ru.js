@@ -1,4 +1,5 @@
 const hometask = {
+  new: 'Новое задание',
   see: {
     task: 'Задание',
     subject: 'Предмет',
