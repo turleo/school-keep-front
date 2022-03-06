@@ -26,7 +26,8 @@ export default class Hometask {
     const newTask = {
       id: task.id,
       done: task.done,
-      text: task.text
+      text: task.text,
+      homework_id: task.homework_id
     }
     window.ws.send({ event: 'hometask.task.change', data: newTask })
   }

@@ -2,7 +2,10 @@ const hometask = {
   see: {
     task: 'Task',
     subject: 'Subject',
-    deadline: 'Deadline'
+    deadline: 'Deadline',
+    tasks: {
+      new: 'New task'
+    }
   }
 }
 

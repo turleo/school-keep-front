@@ -15,7 +15,7 @@
       </md-datepicker>
     </div>
     <div class="md-layout-item">
-      <ToDoList :tasks="hometask.tasks"></ToDoList>
+      <ToDoList :tasks="hometask.tasks" :hometask-id="hometask.id"></ToDoList>
     </div>
   </md-dialog>
 </template>

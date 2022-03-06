@@ -2,7 +2,10 @@ const hometask = {
   see: {
     task: 'Задание',
     subject: 'Предмет',
-    deadline: 'Дата сдачи'
+    deadline: 'Дата сдачи',
+    tasks: {
+      new: 'Новая задача'
+    }
   }
 }
 

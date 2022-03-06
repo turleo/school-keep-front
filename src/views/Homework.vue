@@ -2,7 +2,7 @@
   <div>
     <DateSwitcher :date="$route.params.day" :text="date.toLocaleDateString()"></DateSwitcher>
     <md-list>
-      <md-ripple v-for="hometask in hometasks" v-bind:key="hometask.subject.title" @click.native="setEdit(hometask)">
+      <md-ripple v-for="(hometask, i) in hometasks" v-bind:key="hometask.id" @click.native="setEdit(i)">
         <md-list-item>
           <md-icon>{{ hometask.subject.icon }}</md-icon>
           <span class="md-list-item-text">{{ hometask.subject.title }}</span>
@@ -21,7 +21,7 @@ export default {
   components: { SeeTask, DateSwitcher },
   data () {
     return {
-      openedHometask: { subject: { id: 0 } }
+      openedHometaskId: 0
     }
   },
   computed: {
@@ -32,11 +32,17 @@ export default {
     },
     hometasks () {
       return window.ws.hometaskClass.data.tasks[this.date.toLocaleDateString()]
+    },
+    openedHometask () {
+      if (this.hometasks === undefined) {
+        return { subject: { id: 0 } }
+      }
+      return this.hometasks[this.openedHometaskId]
     }
   },
   methods: {
-    setEdit (hometask) {
-      this.openedHometask = hometask
+    setEdit (hometaskId) {
+      this.openedHometaskId = hometaskId
       this.$refs.editModal.toggle()
     }
   }
