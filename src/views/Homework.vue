@@ -53,7 +53,7 @@ export default {
       return window.ws.hometaskClass.data.tasks_by_server_id
     },
     openedHometask () {
-      if (this.hometasks === undefined) {
+      if (this.hometasks === undefined || !(this.openedHometaskId in this.hometasksByServerId)) {
         return { subject: { id: 0 } }
       }
       return this.hometasksByServerId[this.openedHometaskId]

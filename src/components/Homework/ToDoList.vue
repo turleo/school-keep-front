@@ -50,6 +50,7 @@ export default {
         text: this.newText
       }
       window.ws.hometaskClass.changeTask(task)
+      this.newText = ''
     }
   }
 }
