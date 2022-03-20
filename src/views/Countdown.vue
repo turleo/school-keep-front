@@ -2,6 +2,7 @@
   <div>
     <md-progress-bar md-mode="determinate" :md-value="progress"></md-progress-bar>
     <h1>{{ deltaToStr }}</h1>
+    <h1>{{ $t('countdown.tillEnd', { time: nowLesson + 1 }) }}</h1>
   </div>
 </template>
 
@@ -10,7 +11,8 @@ export default {
   name: 'Countdown',
   data () {
     return {
-      current: new Date()
+      current: new Date(),
+      nowLesson: 0
     }
   },
   methods: {
@@ -55,14 +57,7 @@ export default {
       return bells
     },
     nextBell () {
-      const nowTime = this.current.getHours() * 60 * 60 + this.current.getMinutes() * 60 + this.current.getSeconds()
-      for (let i = this.todayBells.length; i--; i > 0) {
-        const delta = this.getDelta(nowTime, this.strToTime(this.todayBells[i].end))
-        if (delta < 0) {
-          return this.todayBells[i]
-        }
-      }
-      return undefined
+      return this.todayBells[this.nowLesson]
     },
     showDelta () {
       const nowTime = this.current.getHours() * 60 * 60 + this.current.getMinutes() * 60 + this.current.getSeconds()
@@ -87,6 +82,13 @@ export default {
   mounted () {
     setInterval(() => {
       this.current = new Date()
+      const nowTime = this.current.getHours() * 60 * 60 + this.current.getMinutes() * 60 + this.current.getSeconds()
+      for (let i = this.todayBells.length; i--; i > 0) {
+        const delta = this.getDelta(nowTime, this.strToTime(this.todayBells[i].end))
+        if (delta < 0) {
+          this.nowLesson = i
+        }
+      }
     }, 1000)
   }
 }

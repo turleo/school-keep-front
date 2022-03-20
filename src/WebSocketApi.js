@@ -67,6 +67,7 @@ export default class WebSocketApi {
   }
 
   connect () {
+    console.clear()
     console.log('Connecting...')
     this.websocket = new WebSocket('ws://127.0.0.1:8000/wsapi/')
 

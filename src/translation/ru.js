@@ -1,5 +1,6 @@
 import { settings } from './settings/ru'
 import { hometask } from './hometask/ru'
+import { countdown } from './countdown/ru'
 
 const ruMessages = {
   title: 'Школа',
@@ -22,6 +23,7 @@ const ruMessages = {
     }
   },
 
+  countdown: countdown,
   hometask: hometask,
 
   drawer: {
