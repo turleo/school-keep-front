@@ -7,7 +7,7 @@
       <h3 class="md-title">{{ $t(currentRouteName) }}</h3>
     </md-app-toolbar>
 
-    <md-app-drawer :md-active.sync="showNavigation" md-swipeable md-persistent="mini" id="navbar">
+    <md-app-drawer :md-active.sync="showNavigation" :md-persistent="persistent" id="navbar" @click.native="closeNavigation">
       <Menu></Menu>
     </md-app-drawer>
     <md-app-content>
@@ -27,6 +27,7 @@ export default {
   data () {
     return {
       showNavigation: false,
+      persistent: window.screen.width > 700 ? 'mini' : 'full',
 
       mdiMenu: mdiMenu
     }
@@ -38,6 +39,11 @@ export default {
   computed: {
     currentRouteName () {
       return this.$route.name
+    }
+  },
+  methods: {
+    closeNavigation () {
+      this.showNavigation = false
     }
   }
 }
