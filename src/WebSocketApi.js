@@ -1,5 +1,5 @@
 import router from './router'
-import Bells from './data/bells'
+import Bells from './data/bells/bells'
 import Subjects from './data/subjects'
 import Lessons from './data/lessons'
 import Hometask from './data/hometask'
@@ -57,7 +57,7 @@ export default class WebSocketApi {
         router.push('/login').then(() => {}).catch(() => {})
         break
       case 'timetable.bells':
-        window.ws.bellClass.bellsListener(data)
+        window.store.commit('changeBells', data.data)
         break
       case 'timetable.subjects':
         window.ws.subjectClass.listener(data)
