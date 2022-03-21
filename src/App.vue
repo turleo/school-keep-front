@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       showNavigation: false,
-      persistent: window.screen.width > 700 ? 'mini' : 'full',
+      persistent: window.screen.width > 700 || window.screen.orientation.type.startsWith('landscape') ? 'mini' : 'full',
 
       mdiMenu: mdiMenu
     }
