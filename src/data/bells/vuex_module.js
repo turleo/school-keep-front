@@ -77,11 +77,14 @@ export default {
   },
   getters: {
     getBells (state) {
-      return state.bells
+      return {
+        bells: state.bells,
+        max_bells: state.max_bells
+      }
     }
   },
   actions: {
-    change (bell) {
+    changeBell (bell) {
       const data = {
         id: bell.id,
         start: bell.start,
@@ -91,7 +94,7 @@ export default {
 
       window.ws.send({ event: 'timetable.bells.change', data: data })
     },
-    delete (bell) {
+    deleteBell (bell) {
       window.ws.send({ event: 'timetable.bells.delete', id: bell.id })
     }
   }

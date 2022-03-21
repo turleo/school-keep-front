@@ -52,8 +52,13 @@ export default {
     }
   },
   computed: {
-    bells: () => { return window.ws.bellClass.data.bells },
-    max_bells: () => { return window.ws.bellClass.data.max_bells }
+    bells: () => {
+      return window.store.getters.getBells.bells
+    },
+    max_bells: () => {
+      console.log(window.store.state)
+      return window.store.getters.getBells.max_bells
+    }
   },
   methods: {
     setEdit (bell) {
