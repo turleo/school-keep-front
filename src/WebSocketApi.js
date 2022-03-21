@@ -44,6 +44,14 @@ export default class WebSocketApi {
         window.ws.send()
         break
       }
+      case 'authentication.token':
+        localStorage.setItem('token', data.token)
+        window.ws.ready = true
+        if (router.currentRoute.path === '/login') {
+          router.push('/').then(() => {}).catch(() => {})
+          router.go(router.currentRoute)
+        }
+        break
       case 'authentication.error':
         localStorage.removeItem('token')
         router.push('/login').then(() => {}).catch(() => {})
@@ -69,7 +77,7 @@ export default class WebSocketApi {
   connect () {
     console.clear()
     console.log('Connecting...')
-    this.websocket = new WebSocket('ws://127.0.0.1:8000/wsapi/')
+    this.websocket = new WebSocket(process.env.VUE_APP_WEBSOCKET_URL)
 
     this.websocket.onmessage = this.localListener
   }
