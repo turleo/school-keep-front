@@ -9,9 +9,13 @@ export default {
       sa: [],
       su: []
     },
-    max_bells: 0
+    max_bells: 0,
+    current: new Date()
   },
   mutations: {
+    updateTime (state) {
+      state.current = new Date()
+    },
     changeBells (state, bellsOrig) {
       function compare (a, b) {
         if (a.start > b.start) {
@@ -81,6 +85,49 @@ export default {
         bells: state.bells,
         max_bells: state.max_bells
       }
+    },
+
+    todayBells (state, getters) {
+      let bells
+      switch (new Date().getDay()) {
+        case 1:
+          bells = state.bells.mo
+          break
+        case 2:
+          bells = state.bells.tu
+          break
+        case 3:
+          bells = state.bells.we
+          break
+        case 4:
+          bells = state.bells.th
+          break
+        case 5:
+          bells = state.bells.fr
+          break
+        case 6:
+          bells = state.bells.sa
+          break
+        case 7:
+          bells = state.bells.su
+          break
+      }
+      state.todayBells = bells
+      return bells
+    },
+    nextBell (state, getters) {
+      return getters.todayBells[getters.nowBellId]
+    },
+    nowBellId (state, getters) {
+      let nowLesson = 0
+      const nowTime = state.current.getHours() * 60 * 60 + state.current.getMinutes() * 60 + state.current.getSeconds()
+      for (let i = getters.todayBells.length; i--; i > 0) {
+        const delta = nowTime - strToTime(getters.todayBells[i].end)
+        if (delta < 0) {
+          nowLesson = i
+        }
+      }
+      return nowLesson
     }
   },
   actions: {
@@ -98,4 +145,13 @@ export default {
       window.ws.send({ event: 'timetable.bells.delete', id: bell.id })
     }
   }
+}
+
+function strToTime (str) {
+  const hours = parseInt(str.slice(0, 2))
+  let minutes = parseInt(str.slice(3, 5))
+  let seconds = parseInt(str.slice(6, 8))
+  minutes += hours * 60
+  seconds += minutes * 60
+  return seconds
 }

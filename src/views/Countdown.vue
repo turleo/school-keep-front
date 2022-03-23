@@ -1,8 +1,7 @@
 <template>
   <div>
-    <md-progress-bar md-mode="determinate" :md-value="progress"></md-progress-bar>
-    <h1>{{ deltaToStr }}</h1>
-    <h1>{{ $t('countdown.tillEnd', { time: nowLesson + 1 }) }}</h1>
+    <md-progress-bar md-mode="determinate" :md-value="progress" class="time"></md-progress-bar>
+    <h1>{{ $t('countdown.tillEnd', { time: nowLesson + 1 }) }} <br> {{ deltaToStr }}</h1>
   </div>
 </template>
 
@@ -29,39 +28,9 @@ export default {
     }
   },
   computed: {
-    todayBells () {
-      let bells
-      switch (this.current.getDay()) {
-        case 1:
-          bells = window.ws.bellClass.data.bells.mo
-          break
-        case 2:
-          bells = window.ws.bellClass.data.bells.tu
-          break
-        case 3:
-          bells = window.ws.bellClass.data.bells.we
-          break
-        case 4:
-          bells = window.ws.bellClass.data.bells.th
-          break
-        case 5:
-          bells = window.ws.bellClass.data.bells.fr
-          break
-        case 6:
-          bells = window.ws.bellClass.data.bells.sa
-          break
-        case 7:
-          bells = window.ws.bellClass.data.bells.su
-          break
-      }
-      return bells
-    },
-    nextBell () {
-      return this.todayBells[this.nowLesson]
-    },
     showDelta () {
       const nowTime = this.current.getHours() * 60 * 60 + this.current.getMinutes() * 60 + this.current.getSeconds()
-      return -this.getDelta(nowTime, this.strToTime(this.nextBell.end))
+      return -this.getDelta(nowTime, this.strToTime(window.store.getters.nextBell.end))
     },
     deltaToStr () {
       let delta = this.showDelta
@@ -72,7 +41,7 @@ export default {
       return `${hours}:${minutes}:${delta}`
     },
     bellLength () {
-      return this.getDelta(this.strToTime(this.nextBell.end), this.strToTime(this.nextBell.start))
+      return this.getDelta(this.strToTime(window.store.getters.nextBell.end), this.strToTime(window.store.getters.nextBell.start))
     },
     progress () {
       console.log(this.bellLength, this.showDelta)
@@ -83,8 +52,8 @@ export default {
     setInterval(() => {
       this.current = new Date()
       const nowTime = this.current.getHours() * 60 * 60 + this.current.getMinutes() * 60 + this.current.getSeconds()
-      for (let i = this.todayBells.length; i--; i > 0) {
-        const delta = this.getDelta(nowTime, this.strToTime(this.todayBells[i].end))
+      for (let i = window.store.getters.todayBells.length; i--; i > 0) {
+        const delta = this.getDelta(nowTime, this.strToTime(window.store.getters.todayBells[i].end))
         if (delta < 0) {
           this.nowLesson = i
         }
@@ -98,8 +67,9 @@ export default {
 h1 {
   font-size: 10vw;
   position: absolute;
-  top: 100px;
+  top: 0vh;
   margin-left: 50px;
+  line-height: 15vw;
 }
 .md-progress-bar {
   max-width: 91vw;
