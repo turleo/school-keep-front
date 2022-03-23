@@ -77,9 +77,9 @@ export default {
     }
   },
   computed: {
-    bells: () => { return window.ws.bellClass.data.bells },
-    max_bells: () => { return window.ws.bellClass.data.max_bells },
-    lessons: () => { return window.ws.lessonsClass.data.lessons }
+    bells: () => { return window.store.state.bells.bells },
+    max_bells: () => { return window.store.state.bells.max_bells },
+    lessons: () => { return window.store.state.lessons.lessons }
   },
   methods: {
     setEdit (lesson, bell, day) {
