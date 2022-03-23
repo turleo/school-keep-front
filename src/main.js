@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
+import { VueHammer } from 'vue2-hammer'
 import Vuex from 'vuex'
 
 import VueMaterial from 'vue-material'
@@ -19,6 +20,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueMaterial)
 Vue.use(VueI18n)
+Vue.use(VueHammer)
 Vue.use(Vuex)
 
 const i18n = new VueI18n({

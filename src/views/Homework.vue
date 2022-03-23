@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <DateSwitcher :date="$route.params.day" :text="date.toLocaleDateString()"></DateSwitcher>
+  <div v-hammer:swipe="changeDay" style="min-height: calc(100vh - 100px)">
+    <DateSwitcher :date="$route.params.day" ref="dateChange" :text="date.toLocaleDateString()"></DateSwitcher>
     <md-list>
       <md-ripple v-for="hometask in hometasks" v-bind:key="hometask.id" @click.native="setEdit(hometask.id)">
         <md-list-item>
@@ -66,6 +66,13 @@ export default {
     },
     createNew () {
       this.$refs.selectSubject.toggle()
+    },
+    changeDay (e) {
+      if (e.direction === 2) {
+        this.$router.push(this.$refs.dateChange.next)
+      } else if (e.direction === 4) {
+        this.$router.push(this.$refs.dateChange.prev)
+      }
     }
   }
 }
