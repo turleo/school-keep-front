@@ -1,7 +1,7 @@
 <template>
   <div>
     <md-progress-bar md-mode="determinate" :md-value="progress" class="time"></md-progress-bar>
-    <h1>{{ $t('countdown.tillEnd', { time: nowLesson + 1 }) }} <br> {{ deltaToStr }}</h1>
+    <h1>{{ $t(template, { time: nowLesson + 1 }) }} <br> {{ deltaToStr }}</h1>
   </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
   data () {
     return {
       current: new Date(),
-      nowLesson: 0
+      nowLesson: 0,
+      template: 'countdown.tillEnd'
     }
   },
   methods: {
@@ -25,12 +26,24 @@ export default {
     },
     getDelta (a, b) {
       return a - b
+    },
+    checkStarted (delta) {
+      if (delta > this.bellLength) {
+        this.template = 'countdown.tillStart'
+      } else {
+        this.template = 'countdown.tillEnd'
+      }
     }
   },
   computed: {
     showDelta () {
       const nowTime = this.current.getHours() * 60 * 60 + this.current.getMinutes() * 60 + this.current.getSeconds()
-      return -this.getDelta(nowTime, this.strToTime(window.store.getters.nextBell.end))
+      let delta = -this.getDelta(nowTime, this.strToTime(window.store.getters.nextBell.end))
+      this.checkStarted(delta)
+      if (this.template === 'countdown.tillStart') {
+        delta -= this.bellLength
+      }
+      return delta
     },
     deltaToStr () {
       let delta = this.showDelta
@@ -44,7 +57,6 @@ export default {
       return this.getDelta(this.strToTime(window.store.getters.nextBell.end), this.strToTime(window.store.getters.nextBell.start))
     },
     progress () {
-      console.log(this.bellLength, this.showDelta)
       return (1 - this.showDelta / this.bellLength) * 100
     }
   },
