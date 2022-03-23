@@ -47,10 +47,10 @@ export default {
       return day
     },
     hometasks () {
-      return window.ws.hometaskClass.data.tasks[this.date.toLocaleDateString()]
+      return window.store.state.hometasks.tasks[this.date.toLocaleDateString()]
     },
     hometasksByServerId () {
-      return window.ws.hometaskClass.data.tasks_by_server_id
+      return window.store.state.hometasks.tasks_by_server_id
     },
     openedHometask () {
       if (this.hometasks === undefined || !(this.openedHometaskId in this.hometasksByServerId)) {

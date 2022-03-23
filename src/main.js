@@ -11,6 +11,7 @@ import VueI18n from 'vue-i18n'
 import WebSocketApi from './WebSocketApi'
 import { messages } from './translation/translate'
 import * as bells from './data/bells/vuex_module'
+import * as hometasks from './data/hometasks/vuex_module'
 import * as lessons from './data/lessons/vuex_module'
 import * as subjects from './data/subjects/vuex_module'
 
@@ -29,6 +30,7 @@ const i18n = new VueI18n({
 const store = new Vuex.Store({
   modules: {
     bells: bells.default,
+    hometasks: hometasks.default,
     lessons: lessons.default,
     subjects: subjects.default
   }

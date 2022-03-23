@@ -1,14 +1,6 @@
-import Vue from 'vue'
-
 export default class Hometask {
   constructor () {
     this.ask = 'hometask.fetch'
-    this.data = new Vue({
-      data: {
-        tasks: {},
-        tasks_by_server_id: {}
-      }
-    })
   }
 
   listener (e) {

@@ -2,7 +2,7 @@ import router from './router'
 import Bells from './data/bells/bells'
 import Subjects from './data/subjects/subjects'
 import Lessons from './data/lessons/lessons'
-import Hometask from './data/hometask'
+import Hometask from './data/hometasks/hometask'
 
 export default class WebSocketApi {
   constructor () {
@@ -66,7 +66,7 @@ export default class WebSocketApi {
         window.store.commit('changeLessons', data.data)
         break
       case 'hometask':
-        window.ws.hometaskClass.listener(data)
+        window.store.commit('changeHometasks', data.data)
         break
     }
     if (window.ws.listeners[data.event] !== undefined && window.ws.ready) {
