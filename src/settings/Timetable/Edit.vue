@@ -44,7 +44,7 @@ export default {
     'bell'
   ],
   computed: {
-    subjects: () => { return window.ws.subjectClass.data.subjects }
+    subjects: () => { return window.store.state.subjects.subjects }
   }
 }
 </script>

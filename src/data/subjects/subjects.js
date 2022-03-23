@@ -1,18 +1,6 @@
-import Vue from 'vue'
-
 export default class Subjects {
   constructor () {
     this.ask = 'timetable.subjects.fetch'
-    this.subjects = []
-    this.data = new Vue({
-      data: {
-        subjects: []
-      }
-    })
-  }
-
-  listener (e) {
-    this.data.subjects = e.data
   }
 
   change (subject) {

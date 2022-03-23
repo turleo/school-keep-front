@@ -12,6 +12,7 @@ import WebSocketApi from './WebSocketApi'
 import { messages } from './translation/translate'
 import * as bells from './data/bells/vuex_module'
 import * as lessons from './data/lessons/vuex_module'
+import * as subjects from './data/subjects/vuex_module'
 
 Vue.config.productionTip = false
 
@@ -28,7 +29,8 @@ const i18n = new VueI18n({
 const store = new Vuex.Store({
   modules: {
     bells: bells.default,
-    lessons: lessons.default
+    lessons: lessons.default,
+    subjects: subjects.default
   }
 })
 

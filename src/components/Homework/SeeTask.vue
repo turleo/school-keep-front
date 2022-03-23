@@ -58,7 +58,7 @@ export default {
   ],
   computed: {
     subjects () {
-      return window.ws.subjectClass.data.subjects
+      return window.store.state.subjects.subjects
     }
   },
   mounted () {
