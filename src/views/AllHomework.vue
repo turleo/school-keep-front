@@ -52,8 +52,13 @@ export default {
   .fired {
     background-color: #ffb6c1;
   }
+  >>> .md-list-item-content {
+    overflow-y: visible;
+  }
   .md-list-item {
-    width: 100%;
+    min-width: 100%;
+    position: page;
+    left: 0;
   }
   time {
     color: gray;
