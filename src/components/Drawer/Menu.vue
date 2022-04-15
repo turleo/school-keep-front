@@ -8,8 +8,8 @@
       <Item to="/" :icon="mdiHome" title="drawer.home"></Item>
 
       <Item to="/countdown" :icon="mdiCameraTimer" title="drawer.countdown"></Item>
-      <Item to="/homework/0" :icon="mdiHomeEdit " title="drawer.homework"></Item>
-      <Item to="/homework/all" :icon="mdiHomeEdit " title="drawer.allHomework"></Item>
+      <Item to="/homework/0" :icon="mdiFormatListChecks" title="drawer.homework"></Item>
+      <Item to="/homework/all" :icon="mdiFormatListCheckbox" title="drawer.allHomework"></Item>
 
       <Item to="/settings" :icon="mdiCog" title="drawer.settings"></Item>
 
@@ -23,7 +23,15 @@
 </template>
 
 <script>
-import { mdiLoginVariant, mdiHome, mdiInformation, mdiCog, mdiCameraTimer, mdiHomeEdit } from '@mdi/js'
+import {
+  mdiLoginVariant,
+  mdiHome,
+  mdiInformation,
+  mdiCog,
+  mdiCameraTimer,
+  mdiFormatListChecks,
+  mdiFormatListCheckbox
+} from '@mdi/js'
 import Item from './Item'
 
 export default {
@@ -40,7 +48,8 @@ export default {
       mdiInformation: mdiInformation,
       mdiCog: mdiCog,
       mdiCameraTimer: mdiCameraTimer,
-      mdiHomeEdit: mdiHomeEdit
+      mdiFormatListChecks: mdiFormatListChecks,
+      mdiFormatListCheckbox: mdiFormatListCheckbox
     }
   }
 }
