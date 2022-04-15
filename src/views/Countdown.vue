@@ -82,13 +82,19 @@ export default {
 <style scoped>
 h1 {
   font-size: 10vw;
-  position: absolute;
-  top: 0;
-  margin-left: 50px;
   line-height: 15vw;
+  grid-area: 1 / 1;
+  z-index: 1;
+  margin: 0;
 }
 .md-progress-bar {
   max-width: 91vw;
   height: 30vw;
+  grid-area: 1 / 1;
+  z-index: 0;
+}
+
+div {
+  display: grid;
 }
 </style>
