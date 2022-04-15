@@ -1,21 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="AAA"/>
+    <Countdown class="countdown" />
+    <h1 class="title">{{ $t('drawer.homework') }}</h1>
+    <AllHomework />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Countdown from './Countdown'
+import AllHomework from './AllHomework'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    AllHomework,
+    Countdown
   },
   mounted () {
     console.log(this.$store.state.test)
   }
 }
 </script>
+
+<style scoped>
+  >>> .lesson-progress {
+    font-size: 50px!important;
+  }
+  >>> .md-progress-bar {
+    max-height: 100px;
+  }
+</style>

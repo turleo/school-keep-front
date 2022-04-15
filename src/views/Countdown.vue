@@ -1,7 +1,8 @@
 <template>
   <div>
     <md-progress-bar md-mode="determinate" :md-value="progress" class="time"></md-progress-bar>
-    <h1>{{ $t(template, { time: nowLesson + 1 }) }} <br> {{ deltaToStr }}</h1>
+    <h1 v-if="!ended" class="lesson-progress">{{ $t(template, { time: nowLesson + 1 }) }} <br> {{ deltaToStr }}</h1>
+    <h1 v-else class="lesson-progress">{{ $t('countdown.ended') }}</h1>
   </div>
 </template>
 
@@ -51,13 +52,16 @@ export default {
       delta -= hours * 60 * 60
       const minutes = Math.floor(delta / 60)
       delta -= minutes * 60
-      return `${hours}:${minutes}:${delta}`
+      return `${hours}:${minutes.toString().padStart(2, '0')}:${delta.toString().padStart(2, '0')}`
     },
     bellLength () {
       return this.getDelta(this.strToTime(window.store.getters.nextBell.end), this.strToTime(window.store.getters.nextBell.start))
     },
     progress () {
       return (1 - this.showDelta / this.bellLength) * 100
+    },
+    ended () {
+      return this.showDelta < 0
     }
   },
   mounted () {
@@ -79,7 +83,7 @@ export default {
 h1 {
   font-size: 10vw;
   position: absolute;
-  top: 0vh;
+  top: 0;
   margin-left: 50px;
   line-height: 15vw;
 }
