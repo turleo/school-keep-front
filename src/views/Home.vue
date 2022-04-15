@@ -2,7 +2,7 @@
   <div class="home">
     <Countdown class="countdown" />
     <h1 class="title">{{ $t('drawer.homework') }}</h1>
-    <AllHomework />
+    <AllHomework class="homework" />
   </div>
 </template>
 
@@ -28,5 +28,8 @@ export default {
   }
   >>> .md-progress-bar {
     max-height: 100px;
+  }
+  .homework {
+    overflow-y: hidden;
   }
 </style>

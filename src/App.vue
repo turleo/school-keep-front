@@ -56,4 +56,7 @@ export default {
 .md-app-drawer {
   max-width: 250px;
 }
+.md-app-content {
+  overflow-y: hidden;
+}
 </style>
