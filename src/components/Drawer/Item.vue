@@ -23,6 +23,6 @@ export default {
 
 <style scoped>
   .md-list-item-text {
-    color: black;
+    color: var(--md-theme-default-text-primary-on-background);
   }
 </style>

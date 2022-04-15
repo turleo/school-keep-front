@@ -7,7 +7,6 @@ import Vuex from 'vuex'
 
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
 import VueI18n from 'vue-i18n'
 import WebSocketApi from './WebSocketApi'
 import { messages } from './translation/translate'
@@ -40,6 +39,16 @@ const store = new Vuex.Store({
 
 window.ws = new WebSocketApi()
 window.store = store
+
+if (window.localStorage.getItem('forceTheme') === '1') {
+  console.log(import('vue-material/dist/theme/default-dark.css'))
+} else if (window.localStorage.getItem('forceTheme') === '2') {
+  console.log(import('vue-material/dist/theme/default.css'))
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  console.log(import('vue-material/dist/theme/default-dark.css'))
+} else {
+  console.log(import('vue-material/dist/theme/default.css'))
+}
 
 new Vue({
   router,
