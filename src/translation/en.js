@@ -30,6 +30,7 @@ const enMessages = {
     home: 'Home',
     countdown: 'Countdown',
     homework: 'Hometask',
+    allHomework: 'All hometasks',
     settings: 'Settings',
     about: 'About',
 

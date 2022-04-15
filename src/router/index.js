@@ -8,6 +8,7 @@ import Subjects from '../settings/Subjects/Subjects'
 import Timetable from '../settings/Timetable/Timetable'
 import Countdown from '../views/Countdown'
 import Homework from '../views/Homework'
+import AllHomework from '../views/AllHomework'
 
 Vue.use(VueRouter)
 
@@ -37,6 +38,11 @@ const routes = [
     component: Countdown
   },
 
+  {
+    path: '/homework/all',
+    name: 'drawer.allHomework',
+    component: AllHomework
+  },
   {
     path: '/homework/:day',
     name: 'drawer.homework',

@@ -9,6 +9,7 @@
 
       <Item to="/countdown" :icon="mdiCameraTimer" title="drawer.countdown"></Item>
       <Item to="/homework/0" :icon="mdiHomeEdit " title="drawer.homework"></Item>
+      <Item to="/homework/all" :icon="mdiHomeEdit " title="drawer.allHomework"></Item>
 
       <Item to="/settings" :icon="mdiCog" title="drawer.settings"></Item>
 

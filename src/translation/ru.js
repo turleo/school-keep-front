@@ -30,6 +30,7 @@ const ruMessages = {
     home: 'Главная',
     countdown: 'Время до...',
     homework: 'Домашнее задание',
+    allHomework: 'Все домашнее задание',
     settings: 'Настройки',
     about: 'Что это?',
 
