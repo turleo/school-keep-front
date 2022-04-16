@@ -34,11 +34,12 @@ const enMessages = {
     settings: 'Settings',
     about: 'About',
 
-    login: 'Login'
+    login: 'Login',
+    register: 'Register'
   },
 
   login: {
-    username: 'Username',
+    username: 'E-mail',
     password: 'Password',
     wrongUsername: 'Wrong username',
     wrongPassword: 'Wrong password'

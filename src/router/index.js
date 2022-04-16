@@ -9,6 +9,7 @@ import Timetable from '../settings/Timetable/Timetable'
 import Countdown from '../views/Countdown'
 import Homework from '../views/Homework'
 import AllHomework from '../views/AllHomework'
+import Register from '../views/Register'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/login',
     name: 'drawer.login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'drawer.register',
+    component: Register
   },
 
   {

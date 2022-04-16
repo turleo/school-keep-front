@@ -18,6 +18,7 @@
     </div>
     <div v-else>
       <Item to="/login" :icon="mdiLoginVariant" title="drawer.login"></Item>
+      <Item to="/register" :icon="mdiAccountPlus" title="drawer.register"></Item>
     </div>
   </md-list>
 </template>
@@ -30,7 +31,7 @@ import {
   mdiCog,
   mdiCameraTimer,
   mdiFormatListChecks,
-  mdiFormatListCheckbox
+  mdiFormatListCheckbox, mdiAccountPlus
 } from '@mdi/js'
 import Item from './Item'
 
@@ -49,7 +50,8 @@ export default {
       mdiCog: mdiCog,
       mdiCameraTimer: mdiCameraTimer,
       mdiFormatListChecks: mdiFormatListChecks,
-      mdiFormatListCheckbox: mdiFormatListCheckbox
+      mdiFormatListCheckbox: mdiFormatListCheckbox,
+      mdiAccountPlus: mdiAccountPlus
     }
   }
 }

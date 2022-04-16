@@ -34,11 +34,12 @@ const ruMessages = {
     settings: 'Настройки',
     about: 'Что это?',
 
-    login: 'Войти'
+    login: 'Войти',
+    register: 'Зарегистрироваться'
   },
 
   login: {
-    username: 'Имя пользователя',
+    username: 'Электронная почта',
     password: 'Пароль',
     wrongUsername: 'Неверное имя пользователя',
     wrongPassword: 'Неверный пароль'

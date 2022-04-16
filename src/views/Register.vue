@@ -1,24 +1,20 @@
 <template>
   <form>
-    <h1 class="md-title">{{ $t("drawer.login") }}</h1>
+    <h1 class="md-title">{{ $t("drawer.register") }}</h1>
     <md-field :class="loginClass">
       <label for="username">{{  $t("login.username") }}</label>
       <md-input name="username" id="username" v-model="username" :disabled="sending" required
-                @keydown="error = false" v-on:keyup.enter="focusNext" autofocus />
+                @keydown="error = false" v-on:keyup.enter="focusNext" autofocus type="email" />
       <span class="md-error" v-if="error">{{ $t("login.wrongUsername") }}</span>
     </md-field>
     <md-field :class="loginClass">
       <label for="password">{{ $t("login.password") }}</label>
       <md-input name="password" id="password" v-model="password" :disabled="sending" required
-          @keydown="error = false" type="password" v-on:keyup.enter="send" />
+                @keydown="error = false" type="password" v-on:keyup.enter="send" />
       <span class="md-error" v-if="error">{{ $t("login.wrongPassword") }}</span>
     </md-field>
-    <div class="buttons">
-      <md-button class="right-button">
-        <router-link to="/register">{{ $t("drawer.register") }}</router-link>
-      </md-button>
-      <md-button class="md-primary left-button" :disabled="sending" @click="send" >{{ $t("drawer.login") }}</md-button>
-    </div>
+    <md-button class="md-primary right-button" :disabled="sending" @click="send">{{ $t("drawer.login") }}</md-button>
+
   </form>
 </template>
 
@@ -39,7 +35,7 @@ export default {
     send () {
       this.sending = true
       window.ws.setListener(this.checkAnswer)
-      window.ws.send({ event: 'authentication.user', username: this.username, password: this.password })
+      window.ws.send({ event: 'authentication.register', username: this.username, password: this.password })
     },
     checkAnswer (data) {
       if (data.event === 'authentication.error') {
@@ -72,17 +68,12 @@ export default {
 </script>
 
 <style scoped>
-  form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  .buttons {
-    display: grid;
-  }
-  .right-button {
-    grid-column: 1;
-  }
-  .left-button {
-    grid-column: 2;
-  }
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.right-button {
+  display: block;
+  margin-left: auto;
+}
 </style>
