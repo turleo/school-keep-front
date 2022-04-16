@@ -34,7 +34,7 @@ export default {
   methods: {
     send () {
       this.sending = true
-      window.ws.setListener(this.checkAnswer)
+      window.ws.setListener(this.checkAnswer, 'authentication.token')
       window.ws.send({ event: 'authentication.register', username: this.username, password: this.password })
     },
     checkAnswer (data) {
@@ -43,7 +43,8 @@ export default {
         this.error = true
       } else if (data.event === 'authentication.token') {
         localStorage.setItem('token', data.token)
-        router.back()
+        router.push('/settings')
+        window.location.reload()
       }
     },
     focusNext (e) {
