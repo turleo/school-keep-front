@@ -50,7 +50,7 @@ export default {
 
 <style scoped>
   .fired {
-    background-color: #ffb6c1;
+    background-color: var(--md-theme-default-accent);
   }
   >>> .md-list-item-content {
     overflow-y: visible;
