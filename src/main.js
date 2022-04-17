@@ -50,6 +50,12 @@ if (window.localStorage.getItem('forceTheme') === '1') {
   console.log(import('vue-material/dist/theme/default.css'))
 }
 
+router.afterEach((to) => {
+  Vue.nextTick(() => {
+    document.title = i18n.t(to.name).toString() + ' - SchoolKeep'
+  })
+})
+
 new Vue({
   router,
   i18n,
