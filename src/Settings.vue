@@ -3,10 +3,6 @@
     <Item to="settings/timetable" :icon="mdiTimetable" title="settings.main.timetable"></Item>
     <Item to="settings/lessons" :icon="mdiBell" title="settings.main.bells"></Item>
     <Item to="settings/subjects" :icon="mdiChairSchool" title="settings.main.subjects"></Item>
-
-    <md-divider></md-divider>
-
-    <Item to="settings/devices" :icon="mdiDevices" title="settings.main.devices"></Item>
   </md-list>
 </template>
 
