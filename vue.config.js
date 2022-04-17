@@ -3,5 +3,6 @@ module.exports = {
     name: 'Школа',
     themeColor: '#448aff',
     msTileColor: this.themeColor
-  }
+  },
+  publicPath: '/static/'
 }
