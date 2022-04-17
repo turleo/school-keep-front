@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/',
     name: 'drawer.home',
-    component: import(Home)
+    component: Home
   },
   {
     path: '/login',
@@ -27,45 +27,45 @@ const routes = [
   {
     path: '/register',
     name: 'drawer.register',
-    component: import(Register)
+    component: Register
   },
 
   {
     path: '/countdown',
     name: 'drawer.countdown',
-    component: import(Countdown)
+    component: Countdown
   },
 
   {
     path: '/homework/all',
     name: 'drawer.allHomework',
-    component: import(AllHomework)
+    component: AllHomework
   },
   {
     path: '/homework/:day',
     name: 'drawer.homework',
-    component: import(Homework)
+    component: Homework
   },
 
   {
     path: '/settings',
     name: 'drawer.settings',
-    component: import(Settings)
+    component: Settings
   },
   {
     path: '/settings/lessons',
     name: 'settings.main.bells',
-    component: import(Bells)
+    component: Bells
   },
   {
     path: '/settings/subjects',
     name: 'settings.main.subjects',
-    component: import(Subjects)
+    component: Subjects
   },
   {
     path: '/settings/timetable',
     name: 'settings.main.timetable',
-    component: import(Timetable)
+    component: Timetable
   }
 ]
 
