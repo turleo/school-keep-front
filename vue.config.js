@@ -1,6 +1,6 @@
 module.exports = {
   pwa: {
-    name: 'Школа',
+    name: 'School Keep',
     themeColor: '#448aff',
     msTileColor: this.themeColor
   },
