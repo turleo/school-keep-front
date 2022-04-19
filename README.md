@@ -1,4 +1,4 @@
-# school-syns-front
+# School Keep
 
 ## Project setup
 ```
