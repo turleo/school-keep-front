@@ -52,6 +52,15 @@ const enMessages = {
     password: 'Password',
     wrongUsername: 'Wrong username',
     wrongPassword: 'Wrong password'
+  },
+
+  about: {
+    subtitle: 'School helper',
+    description: 'Website for convenient storing homework and checking out is everything is done for school.',
+    presentation: 'Presentation',
+    presentation_url: 'https://www.canva.com/design/DAE97TPBdLM/view?utm_content=DAE97TPBdLM&utm_campaign=designshare&utm_medium=embeds&utm_source=link',
+    feedback: 'Feedback form',
+    feedback_url: 'https://forms.gle/zWiLyAbFWPig3YAq9'
   }
 }
 

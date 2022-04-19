@@ -52,6 +52,15 @@ const ruMessages = {
     password: 'Пароль',
     wrongUsername: 'Неверное имя пользователя',
     wrongPassword: 'Неверный пароль'
+  },
+
+  about: {
+    subtitle: 'Школьный помошник',
+    description: 'Сайт для удобной записи свогео домашнего задания и возможности оотслеживания процесса его выполнения.',
+    presentation: 'Презентация',
+    presentation_url: 'https://www.canva.com/design/DAE97TPBdLM/view?utm_content=DAE97TPBdLM&utm_campaign=designshare&utm_medium=embeds&utm_source=link',
+    feedback: 'Форма обратной связи',
+    feedback_link: 'https://docs.google.com/forms/d/e/1FAIpQLSemhlcxf4bIKpIg7HaeXadWZjEe0WZMkwDVCTy6KzlmV7RytQ/viewform?usp=sf_link'
   }
 }
 
