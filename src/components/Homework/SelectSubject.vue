@@ -37,7 +37,7 @@ export default {
       console.log(subject)
       window.ws.hometaskClass.change({
         subject: subject,
-        deadline: this.date.toISOString().substring(0, 10)
+        deadline: this.date.toLocaleDateString('sv') // sweden format is same as iso, but in local time
       })
       this.toggle()
     }
