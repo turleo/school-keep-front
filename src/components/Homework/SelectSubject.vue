@@ -34,6 +34,7 @@ export default {
       this.opened = !this.opened
     },
     create (subject) {
+      console.log(subject)
       window.ws.hometaskClass.change({
         subject: subject,
         deadline: this.date.toISOString().substring(0, 10)
