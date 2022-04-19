@@ -25,6 +25,7 @@ export default {
 <style scoped>
   >>> .lesson-progress {
     font-size: 50px!important;
+    line-height: normal;
   }
   >>> .md-progress-bar {
     max-height: 100px;
