@@ -1,8 +1,8 @@
 <template>
   <md-list>
-    <Item to="settings/timetable" :icon="mdiTimetable" title="settings.main.timetable"></Item>
-    <Item to="settings/lessons" :icon="mdiBell" title="settings.main.bells"></Item>
     <Item to="settings/subjects" :icon="mdiChairSchool" title="settings.main.subjects"></Item>
+    <Item to="settings/lessons" :icon="mdiBell" title="settings.main.bells"></Item>
+    <Item to="settings/timetable" :icon="mdiTimetable" title="settings.main.timetable"></Item>
   </md-list>
 </template>
 
