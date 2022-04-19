@@ -4,5 +4,6 @@ module.exports = {
     themeColor: '#448aff',
     msTileColor: this.themeColor
   },
-  publicPath: '/static/'
+  publicPath: '/static/',
+  productionSourceMap: process.env.NODE_ENV !== 'production'
 }
