@@ -15,6 +15,15 @@ const ruMessages = {
       saturday: 'Суббота',
       sunday: 'Воскресенье'
     },
+    days_short: {
+      monday: 'пн',
+      tuesday: 'вт',
+      wednesday: 'ср',
+      thursday: 'чт',
+      friday: 'пт',
+      saturday: 'сб',
+      sunday: 'вс'
+    },
     edit: {
       edit: 'Изменить',
       cancel: 'Отменить',

@@ -15,6 +15,15 @@ const enMessages = {
       saturday: 'Saturday',
       sunday: 'Sunday'
     },
+    days_short: {
+      monday: 'mo',
+      tuesday: 'tu',
+      wednesday: 'we',
+      thursday: 'th',
+      friday: 'fr',
+      saturday: 'sa',
+      sunday: 'su'
+    },
     edit: {
       edit: 'Edit',
       cancel: 'Cancel',

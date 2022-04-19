@@ -1,6 +1,7 @@
 <template>
   <div v-hammer:swipe="changeDay" style="min-height: calc(100vh - 100px)">
-    <DateSwitcher :date="$route.params.day" ref="dateChange" :text="date.toLocaleDateString()"></DateSwitcher>
+    <DateSwitcher :date="$route.params.day" ref="dateChange"
+                  :text="`${date.toLocaleDateString()} ${days_names[date.getDay()]}`"></DateSwitcher>
     <md-list>
       <md-ripple v-for="hometask in hometasks" v-bind:key="hometask.id" @click.native="setEdit(hometask.id)">
         <md-list-item>
@@ -37,6 +38,15 @@ export default {
   data () {
     return {
       openedHometaskId: 0,
+      days_names: [
+        this.$t('common.days_short.monday'),
+        this.$t('common.days_short.tuesday'),
+        this.$t('common.days_short.wednesday'),
+        this.$t('common.days_short.thursday'),
+        this.$t('common.days_short.friday'),
+        this.$t('common.days_short.saturday'),
+        this.$t('common.days_short.sunday')
+      ],
       mdiPlus: mdiPlus
     }
   },
