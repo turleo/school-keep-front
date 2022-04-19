@@ -52,7 +52,7 @@ if (window.localStorage.getItem('forceTheme') === '1') {
 
 router.afterEach((to) => {
   Vue.nextTick(() => {
-    document.title = i18n.t(to.name).toString() + ' - SchoolKeep'
+    document.title = i18n.t(to.name).toString() + ' - ' + i18n.t('title').toString()
   })
 })
 

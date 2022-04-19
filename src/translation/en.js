@@ -3,7 +3,7 @@ import { hometask } from './hometask/en'
 import { countdown } from './countdown/en'
 
 const enMessages = {
-  title: 'School',
+  title: 'School Keep',
   settings: settings,
   common: {
     days: {
