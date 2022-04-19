@@ -60,7 +60,9 @@ const enMessages = {
     presentation: 'Presentation',
     presentation_url: 'https://www.canva.com/design/DAE97TPBdLM/view?utm_content=DAE97TPBdLM&utm_campaign=designshare&utm_medium=embeds&utm_source=link',
     feedback: 'Feedback form',
-    feedback_url: 'https://forms.gle/zWiLyAbFWPig3YAq9'
+    feedback_url: 'https://forms.gle/zWiLyAbFWPig3YAq9',
+    source_backend: 'Backend source code',
+    source_frontend: 'Frontend source code'
   }
 }
 

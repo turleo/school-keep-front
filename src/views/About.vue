@@ -4,6 +4,9 @@
     <h1 style="margin-bottom: 8px">{{ $t('title') }}</h1>
     <p style="margin-top: 0; font-size: 13px">{{  $t('about.subtitle') }}</p>
     <p>{{ $t('about.description') }}</p>
+    <a href="https://github.com/turleo/school-keep" target="_blank" rel="noopener">{{ $t('about.source_backend') }}</a>
+    <a href="https://github.com/turleo/school-keep-front" target="_blank" rel="noopener">{{ $t('about.source_frontend') }}</a>
+    <br>
     <a :href="$t('about.presentation_url')" target="_blank" rel="noopener">{{ $t('about.presentation') }}</a>
     <a :href="$t('about.feedback_url')" target="_blank" rel="noopener">{{ $t('about.feedback') }}</a>
   </article>

@@ -60,7 +60,9 @@ const ruMessages = {
     presentation: 'Презентация',
     presentation_url: 'https://www.canva.com/design/DAE97TPBdLM/view?utm_content=DAE97TPBdLM&utm_campaign=designshare&utm_medium=embeds&utm_source=link',
     feedback: 'Форма обратной связи',
-    feedback_link: 'https://docs.google.com/forms/d/e/1FAIpQLSemhlcxf4bIKpIg7HaeXadWZjEe0WZMkwDVCTy6KzlmV7RytQ/viewform?usp=sf_link'
+    feedback_link: 'https://docs.google.com/forms/d/e/1FAIpQLSemhlcxf4bIKpIg7HaeXadWZjEe0WZMkwDVCTy6KzlmV7RytQ/viewform?usp=sf_link',
+    source_backend: 'Исходный код серверной части',
+    source_frontend: 'Исходный код сайта'
   }
 }
 
