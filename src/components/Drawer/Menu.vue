@@ -12,10 +12,14 @@
       <Item to="/homework/all" :icon="mdiFormatListCheckbox" title="drawer.allHomework"></Item>
 
       <Item to="/settings" :icon="mdiCog" title="drawer.settings"></Item>
+
+      <Item to="/about" :icon="mdiInformation" title="drawer.about"></Item>
+
     </div>
     <div v-else>
       <Item to="/login" :icon="mdiLoginVariant" title="drawer.login"></Item>
       <Item to="/register" :icon="mdiAccountPlus" title="drawer.register"></Item>
+      <Item to="/about" :icon="mdiInformation" title="drawer.about"></Item>
     </div>
   </md-list>
 </template>
