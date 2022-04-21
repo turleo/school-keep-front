@@ -1,6 +1,7 @@
 import { settings } from './settings/en'
 import { hometask } from './hometask/en'
 import { countdown } from './countdown/en'
+import { onboarding } from './onboarding/en'
 
 const enMessages = {
   title: 'School Keep',
@@ -34,6 +35,8 @@ const enMessages = {
 
   countdown: countdown,
   hometask: hometask,
+
+  onboarding: onboarding,
 
   drawer: {
     home: 'Home',

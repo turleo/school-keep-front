@@ -74,6 +74,11 @@ const routes = [
     path: '/settings/timetable',
     name: 'settings.main.timetable',
     component: Timetable
+  },
+  {
+    path: '/onboarding',
+    name: 'onboarding.title',
+    component: () => import('../views/OnBoarding')
   }
 ]
 

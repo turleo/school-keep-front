@@ -43,8 +43,7 @@ export default {
         this.error = true
       } else if (data.event === 'authentication.token') {
         localStorage.setItem('token', data.token)
-        router.push('/settings')
-        window.location.reload()
+        router.push('/onboarding')
       }
     },
     focusNext (e) {
