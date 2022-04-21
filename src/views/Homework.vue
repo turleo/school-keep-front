@@ -9,6 +9,7 @@
           <md-icon>{{ hometask.subject.icon }}</md-icon>
           <span class="md-list-item-text">{{ hometask.subject.title }}</span>
         </md-list-item>
+        <md-divider></md-divider>
       </md-ripple>
       <!-- All lessons -->
       <md-ripple v-for="lesson in lessons" v-bind:key="'s' + lesson.id" @click.native="createHomework(lesson)">
@@ -16,6 +17,7 @@
           <md-icon>{{ lesson.subject.icon }}</md-icon>
           <span class="md-list-item-text">{{ lesson.subject.title }}</span>
         </md-list-item>
+        <md-divider></md-divider>
       </md-ripple>
       <!-- Other -->
       <md-ripple @click.native="createNew">
