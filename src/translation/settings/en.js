@@ -3,7 +3,8 @@ const settings = {
     timetable: 'Timetable',
     bells: 'Bell times',
     subjects: 'Subjects',
-    devices: 'Authorised devices'
+    devices: 'Authorised devices',
+    onboarding: 'Rerun onboarding'
   },
   bells: {
     start: 'Start time',

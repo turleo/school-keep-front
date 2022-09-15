@@ -3,7 +3,8 @@ const settings = {
     timetable: 'Расписание',
     bells: 'Расписание звонков',
     subjects: 'Предметы',
-    devices: 'Устройства'
+    devices: 'Устройства',
+    onboarding: 'Настроить сначала'
   },
   bells: {
     start: 'Время начала',
